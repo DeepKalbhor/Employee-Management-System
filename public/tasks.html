@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Tasks</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="logo">EMS</div>
+            <span>Employee Management</span>
+        </div>
+
+            <nav>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="employees.html">Employees</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="leave.html">Leave</a>
+            <a href="salary.html">Salary</a>
+            <a href="performance.html">Performance</a>
+            <a href="tasks.html" class="active">Tasks</a>
+            <a href="reports.html">Reports</a>
+            <a href="profile.html">Profile</a>
+            <a href="roles.html">
+                Roles
+            </a>
+
+        </nav>
+            <div class="sidebar-bottom">
+
+                <a href="index.html">Logout</a>
+            </div>
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+                <h2>Tasks</h2>
+                <p>Manage employee tasks</p>
+            </div>
+
+            <div class="profile">
+                <span>Deep</span>
+                <div class="avatar">D</div>
+            </div>
+
+        </header>
+
+
+        <div class="employee-actions">
+
+            <button
+                class="add-btn"
+                onclick="openTask()">
+
+                + Task
+
+            </button>
+
+        </div>
+
+
+        <div class="card employee-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Employee</th>
+                        <th>Task</th>
+                        <th>Due</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tasks"></tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div id="taskModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Add Task</h3>
+
+        <form id="taskForm">
+
+            <input
+                id="employeeId"
+                placeholder="Employee ID"
+                required>
+
+            <input
+                id="title"
+                placeholder="Task"
+                required>
+
+            <input
+                id="dueDate"
+                type="date"
+                required>
+
+            <button type="submit">
+                Assign
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/tasks.js"></script>
+
+</body>
+
+</html>

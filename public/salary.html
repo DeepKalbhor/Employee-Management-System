@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Salary | EMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="logo">EMS</div>
+
+            <span>Employee Management</span>
+
+        </div>
+
+         <nav>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="employees.html">Employees</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="leave.html">Leave</a>
+            <a href="salary.html" class="active">Salary</a>
+            <a href="performance.html">Performance</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="reports.html">Reports</a>
+            <a href="profile.html">Profile</a>
+            <a href="roles.html">
+                Roles
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html">Logout</a>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>Salary</h2>
+
+                <p>
+                    Employee salary details
+                </p>
+
+            </div>
+
+            <div class="profile">
+
+                <span>Deep</span>
+
+                <div class="avatar">D</div>
+
+            </div>
+
+        </header>
+
+
+        <div class="employee-actions">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search salary..."
+            >
+
+        </div>
+
+
+        <div class="card employee-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Employee</th>
+
+                        <th>Month</th>
+
+                        <th>Basic</th>
+
+                        <th>Allowances</th>
+
+                        <th>Deductions</th>
+
+                        <th>Net Salary</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="salaryTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="js/salary.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | EMS</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="logo">EMS</div>
+
+            <span>Employee Management</span>
+
+        </div>
+
+
+               <nav>
+
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="employees.html">Employees</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="leave.html">Leave</a>
+            <a href="salary.html">Salary</a>
+            <a href="performance.html">Performance</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="reports.html">Reports</a>
+            <a href="profile.html">Profile</a>
+            <a href="roles.html">
+                Roles
+            </a>
+
+        </nav>
+
+
+        <!-- NOTIFICATION -->
+
+        <div class="notification">
+
+            <button onclick="showNotifications()">
+
+                🔔
+
+                <span id="count">0</span>
+
+            </button>
+
+            <div id="notifications"></div>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html">
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>Dashboard</h2>
+
+                <p>
+                    Employee management overview
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                <span>Deep</span>
+
+                <div class="avatar">
+                    D
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- LIVE STATISTICS -->
+
+        <section class="stats">
+
+            <div class="card">
+
+                <p>Total Employees</p>
+
+                <h2 id="totalEmployees">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="card">
+
+                <p>Present Today</p>
+
+                <h2 id="presentToday">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="card">
+
+                <p>On Leave</p>
+
+                <h2 id="onLeave">
+                    0
+                </h2>
+
+            </div>
+
+
+            <div class="card">
+
+                <p>Pending Requests</p>
+
+                <h2 id="pendingRequests">
+                    0
+                </h2>
+
+            </div>
+
+        </section>
+       
+    </main>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+
+<script>
+
+async function showNotifications() {
+
+    const box =
+        document.getElementById(
+            "notifications"
+        );
+
+    const employeeId =
+        localStorage.getItem(
+            "employeeId"
+        ) || "EMP001";
+
+
+    const response =
+        await fetch(
+            `/api/notifications/${employeeId}`
+        );
+
+
+    const data =
+        await response.json();
+
+
+    box.innerHTML = "";
+
+
+    data.forEach(n => {
+
+        box.innerHTML += `
+
+            <div class="notification-item">
+
+                ${n.message}
+
+            </div>
+
+        `;
+
+    });
+
+
+    document.getElementById(
+        "count"
+    ).textContent = data.length;
+
+}
+
+</script>
+
+</body>
+
+</html>

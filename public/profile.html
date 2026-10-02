@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Profile</title>
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="logo">EMS</div>
+
+            <span>Employee Management</span>
+
+        </div>
+
+              <nav>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="employees.html">Employees</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="leave.html">Leave</a>
+            <a href="salary.html">Salary</a>
+            <a href="performance.html">Performance</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="reports.html">Reports</a>
+            <a href="profile.html" class="active">Profile</a>
+            <a href="roles.html">
+                Roles
+            </a>
+
+        </nav>
+            <div class="sidebar-bottom">
+
+                <a href="index.html">Logout</a>
+            </div>
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>My Profile</h2>
+
+                <p>
+                    Update personal information
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <div class="card profile-card">
+
+            <form id="profileForm">
+
+                <label>
+                    Employee ID
+                </label>
+
+                <input
+                    id="employeeId"
+                    readonly>
+
+
+                <label>
+                    Name
+                </label>
+
+                <input
+                    id="name"
+                    readonly>
+
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    id="email"
+                    type="email"
+                    required>
+
+
+                <label>
+                    Phone
+                </label>
+
+                <input
+                    id="phone"
+                    required>
+
+
+                <button type="submit">
+                    Save Changes
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="js/profile.js"></script>
+
+</body>
+
+</html>

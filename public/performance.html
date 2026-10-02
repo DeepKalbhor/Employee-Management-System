@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Performance | EMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="logo">EMS</div>
+
+            <span>Employee Management</span>
+
+        </div>
+
+          <nav>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="employees.html">Employees</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="leave.html">Leave</a>
+            <a href="salary.html">Salary</a>
+            <a href="performance.html" class="active">Performance</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="reports.html">Reports</a>
+            <a href="profile.html">Profile</a>
+            <a href="roles.html">
+                Roles
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html">Logout</a>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>Performance</h2>
+
+                <p>
+                    Employee performance records
+                </p>
+
+            </div>
+
+            <div class="profile">
+
+                <span>Deep</span>
+
+                <div class="avatar">D</div>
+
+            </div>
+
+        </header>
+
+
+        <div class="employee-actions">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search employee..."
+            >
+
+            <button
+                class="add-btn"
+                onclick="openPerformanceModal()">
+
+                + Add Review
+
+            </button>
+
+        </div>
+
+
+        <div class="card employee-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Employee</th>
+
+                        <th>Department</th>
+
+                        <th>Review Date</th>
+
+                        <th>Rating</th>
+
+                        <th>Comments</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="performanceTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- PERFORMANCE MODAL -->
+
+<div id="performanceModal"
+     class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3>Add Performance Review</h3>
+
+            <span
+                class="close"
+                onclick="closePerformanceModal()">
+
+                ×
+
+            </span>
+
+        </div>
+
+
+        <form id="performanceForm">
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>
+                        Employee ID
+                    </label>
+
+                    <input
+                        id="performanceEmployeeId"
+                        placeholder="EMP001"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Review Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="reviewDate"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Rating
+                    </label>
+
+                    <select id="rating">
+
+                        <option value="5">
+                            5 - Excellent
+                        </option>
+
+                        <option value="4.5">
+                            4.5 - Very Good
+                        </option>
+
+                        <option value="4">
+                            4 - Good
+                        </option>
+
+                        <option value="3.5">
+                            3.5 - Above Average
+                        </option>
+
+                        <option value="3">
+                            3 - Average
+                        </option>
+
+                        <option value="2">
+                            2 - Needs Improvement
+                        </option>
+
+                        <option value="1">
+                            1 - Poor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Comments
+                    </label>
+
+                    <input
+                        id="performanceComments"
+                        placeholder="Performance comments">
+
+                </div>
+
+            </div>
+
+
+            <button type="submit">
+                Save Review
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/performance.js"></script>
+
+</body>
+
+</html>

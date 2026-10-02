@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance | EMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="logo">EMS</div>
+
+            <span>Employee Management</span>
+
+        </div>
+
+              <nav>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="employees.html">Employees</a>
+            <a href="attendance.html" class="active">Attendance</a>
+            <a href="leave.html">Leave</a>
+            <a href="salary.html">Salary</a>
+            <a href="performance.html">Performance</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="reports.html">Reports</a>
+            <a href="profile.html">Profile</a>
+            <a href="roles.html">
+                Roles
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html">Logout</a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>Attendance</h2>
+
+                <p>
+                    Manage employee attendance
+                </p>
+
+            </div>
+
+            <div class="profile">
+
+                <span>Deep</span>
+
+                <div class="avatar">
+                    D
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ACTION BAR -->
+
+        <div class="employee-actions">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search employee..."
+            >
+
+            <button
+                class="add-btn"
+                onclick="openAttendanceModal()">
+
+                + Mark Attendance
+
+            </button>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="card employee-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Department</th>
+
+                        <th>Date</th>
+
+                        <th>Status</th>
+
+                        <th>Check In</th>
+
+                        <th>Check Out</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="attendanceTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ATTENDANCE MODAL -->
+
+<div id="attendanceModal"
+     class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3>Mark Attendance</h3>
+
+            <span
+                class="close"
+                onclick="closeAttendanceModal()">
+
+                ×
+
+            </span>
+
+        </div>
+
+
+        <form id="attendanceForm">
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>
+                        Employee ID
+                    </label>
+
+                    <input
+                        id="attendanceEmployeeId"
+                        placeholder="EMP001"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="attendanceDate"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select
+                        id="attendanceStatus">
+
+                        <option value="Present">
+                            Present
+                        </option>
+
+                        <option value="Absent">
+                            Absent
+                        </option>
+
+                        <option value="Leave">
+                            Leave
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Check In
+                    </label>
+
+                    <input
+                        type="time"
+                        id="checkIn">
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Check Out
+                    </label>
+
+                    <input
+                        type="time"
+                        id="checkOut">
+
+                </div>
+
+            </div>
+
+
+            <button type="submit">
+                Save Attendance
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/attendance.js"></script>
+
+</body>
+
+</html>

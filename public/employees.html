@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Employees | EMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="logo">EMS</div>
+
+            <span>Employee Management</span>
+
+        </div>
+
+                <nav>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="employees.html" class="active">Employees</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="leave.html">Leave</a>
+            <a href="salary.html">Salary</a>
+            <a href="performance.html">Performance</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="reports.html">Reports</a>
+            <a href="profile.html">Profile</a>
+            <a href="roles.html">
+                Roles
+            </a>
+
+        </nav>
+        <div class="sidebar-bottom">
+
+
+            <a href="index.html">Logout</a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>Employees</h2>
+
+                <p>
+                    Manage employee records
+                </p>
+
+            </div>
+
+            <div class="profile">
+
+                <span>Deep</span>
+
+                <div class="avatar">D</div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ACTION BAR -->
+
+        <div class="employee-actions">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search employee..."
+            >
+
+            <button
+                class="add-btn"
+                onclick="openModal()">
+                + Add Employee
+            </button>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="card employee-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Department</th>
+
+                        <th>Designation</th>
+
+                        <th>Joining Date</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="employeeTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ADD EMPLOYEE MODAL -->
+
+<div id="employeeModal"
+     class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3>Add Employee</h3>
+
+            <span
+                class="close"
+                onclick="closeModal()">
+                ×
+            </span>
+
+        </div>
+
+
+        <form id="employeeForm">
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Employee ID</label>
+
+                    <input
+                        id="employee_id"
+                        required>
+                </div>
+
+
+                <div>
+                    <label>Name</label>
+
+                    <input
+                        id="name"
+                        required>
+                </div>
+
+
+                <div>
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        id="email">
+                </div>
+
+
+                <div>
+                    <label>Phone</label>
+
+                    <input id="phone">
+                </div>
+
+
+                <div>
+                    <label>Department</label>
+
+                    <input id="department">
+                </div>
+
+
+                <div>
+                    <label>Designation</label>
+
+                    <input id="designation">
+                </div>
+
+
+                <div>
+                    <label>Joining Date</label>
+
+                    <input
+                        type="date"
+                        id="joining_date">
+                </div>
+
+
+                <div>
+                    <label>Address</label>
+
+                    <input id="address">
+                </div>
+
+            </div>
+
+
+            <button type="submit">
+                Save Employee
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/employees.js"></script>
+
+</body>
+
+</html>

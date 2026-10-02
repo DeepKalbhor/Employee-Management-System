@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Leave | EMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="logo">EMS</div>
+
+            <span>Employee Management</span>
+
+        </div>
+
+             <nav>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="employees.html">Employees</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="leave.html" class="active">Leave</a>
+            <a href="salary.html">Salary</a>
+            <a href="performance.html">Performance</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="reports.html">Reports</a>
+            <a href="profile.html">Profile</a>
+            <a href="roles.html">
+                Roles
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html">Logout</a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>Leave Management</h2>
+
+                <p>
+                    Manage employee leave requests
+                </p>
+
+            </div>
+
+            <div class="profile">
+
+                <span>Deep</span>
+
+                <div class="avatar">D</div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ACTIONS -->
+
+        <div class="employee-actions">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search leave request..."
+            >
+
+            <button
+                class="add-btn"
+                onclick="openLeaveModal()">
+
+                + Apply Leave
+
+            </button>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="card employee-card">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Employee</th>
+
+                        <th>Leave Type</th>
+
+                        <th>Dates</th>
+
+                        <th>Days</th>
+
+                        <th>Status</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="leaveTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- LEAVE MODAL -->
+
+<div id="leaveModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3>Apply Leave</h3>
+
+            <span
+                class="close"
+                onclick="closeLeaveModal()">
+
+                ×
+
+            </span>
+
+        </div>
+
+
+        <form id="leaveForm">
+
+            <div class="form-grid">
+
+                <div>
+
+                    <label>
+                        Employee ID
+                    </label>
+
+                    <input
+                        id="leaveEmployeeId"
+                        placeholder="EMP001"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Leave Type
+                    </label>
+
+                    <select id="leaveType">
+
+                        <option>
+                            Casual Leave
+                        </option>
+
+                        <option>
+                            Sick Leave
+                        </option>
+
+                        <option>
+                            Earned Leave
+                        </option>
+
+                        <option>
+                            Emergency Leave
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Start Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="startDate"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        End Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="endDate"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Number of Days
+                    </label>
+
+                    <input
+                        type="number"
+                        id="leaveDays"
+                        readonly>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Reason
+                    </label>
+
+                    <input
+                        id="leaveReason"
+                        placeholder="Reason for leave">
+
+                </div>
+
+            </div>
+
+
+            <button type="submit">
+                Submit Request
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="js/leave.js"></script>
+
+</body>
+
+</html>
