@@ -22,15 +22,21 @@ app.use(express.static(path.join(__dirname, "public")));
 // MySQL Connection
 // =========================
 
+console.log("DB HOST:", process.env.DB_HOST);
+console.log("DB PORT:", process.env.DB_PORT);
+console.log("DB USER:", process.env.DB_USER);
+console.log("DB NAME:", process.env.DB_NAME);
+
 const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
+    port: Number(process.env.DB_PORT),
+
     ssl: {
-    rejectUnauthorized: false
-}
+        rejectUnauthorized: false
+    }
 });
 
 
@@ -39,8 +45,10 @@ const db = mysql.createPool({
 db.getConnection((err, connection) => {
 
     if (err) {
+
         console.log("MySQL connection failed:");
-        console.log(err.message);
+        console.log(err);
+
         return;
     }
 
