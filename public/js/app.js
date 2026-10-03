@@ -34,7 +34,8 @@ loginForm.addEventListener("submit", async (event) => {
         if (data.success) {
 
             message.textContent = "Login successful";
-
+      localStorage.setItem("employeeId", data.employee_id);
+localStorage.setItem("role", data.role);
             setTimeout(() => {
                 window.location.href = "dashboard.html";
             }, 500);
