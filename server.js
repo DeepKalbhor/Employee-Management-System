@@ -70,7 +70,9 @@ app.post("/api/login", (req, res) => {
 
         return res.json({
             success: true,
-            message: "Login successful"
+            message: "Login successful",
+            employee_id: "EMP001",
+            role: "Admin"
         });
 
     }
